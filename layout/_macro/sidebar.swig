@@ -108,7 +108,6 @@
             </ul>
           </div>
         {% endif %}
-
       </section>
 
       {% if display_toc %}

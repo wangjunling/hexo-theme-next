@@ -6,15 +6,15 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "java"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2016
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
@@ -22,6 +22,11 @@ rss:
 canonical: true
 
 
+
+
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+wechatpay: /uploads/wechat-reward-image.jpg
+alipay: /uploads/alipay-reward-image.jpg
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -29,12 +34,13 @@ canonical: true
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories
-  #about: /about
+  categories: /categories
+  # about: /about
   archives: /archives
   tags: /tags
-  schedule: /schedule
+  # schedule: /schedule
   #commonweal: /404.html
+  # guestbook: /guestbook
 
 
 # Enable/Disable menu icons.
@@ -43,7 +49,7 @@ menu:
 #   Key is the name of menu item and value is the name of FontAwsome icon. Key is case-senstive.
 #   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
-  enable: false
+  enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
@@ -55,15 +61,18 @@ menu_icons:
 
 
 
-
+visit_counter:
+  on: true
+  site_visit: true
+  page_visit: true
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+# scheme: Muse
+# scheme: Mist
+scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -86,6 +95,7 @@ font:
     external: true
     family: Lato
 
+
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
   headings:
@@ -97,7 +107,7 @@ font:
   posts:
     external: true
     family:
-
+    size: 14
   # Font settings for Logo
   # Fallback to `global` font settings.
   # The `size` option use `px` as unit
@@ -123,10 +133,11 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
-
-
+social:
+  GitHub: https://github.com/wangjunling
+  Weibo: http://weibo.com/u/2325342333
+  Zhihu: https://www.zhihu.com/people/one-sheldon
+  NetEase: http://music.163.com/#/user/home?id=83959138
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -139,7 +150,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-
+  NetEase: music
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
@@ -158,22 +169,22 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
+# creative_commons: by-sa
 #creative_commons:
 
 
 sidebar:
   # Sidebar Position, available value: left | right
   position: left
-  #position: right
+  # position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggler.
-  display: post
-  #display: always
+  # display: post
+  display: always
   #display: hide
   #display: remove
 
@@ -184,7 +195,9 @@ sidebar:
 #links_layout: inline
 #links:
   #Title: http://example.com/
-
+links_title: Links
+links:
+  lonlone: http://www.lonlone.xyz/
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -205,6 +218,7 @@ custom_logo:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
+# highlight_theme: night
 
 
 # Automatically scroll page to section which is under <!-- more --> mark.
@@ -215,7 +229,7 @@ scroll_to_more: true
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
-  length: 150
+  length: 300
 
 
 # Wechat Subscriber
@@ -284,7 +298,7 @@ duoshuo_info:
   admin_enable: false
   user_id: 0
   #admin_nickname: Author
-
+duoshuo_hotartical: true
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
@@ -316,7 +330,7 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -377,37 +391,32 @@ vendors:
   _internal: vendors
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: //cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
-  # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  # Fancybox: http://fancyapps.com/fancybox/
+  fancybox: //cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js
+  fancybox_css: //cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
-  # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: //cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js
 
   # Internal version: 1.9.7
-  # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: //cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
-  # See: http://VelocityJS.org
-  velocity:
+  velocity: //cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js
 
   # Internal version: 1.2.1
-  # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: //cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js
 
   # Internal version: 0.7.9
-  # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: //cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js
 
   # Internal version: 4.4.0
-  # See: http://fontawesome.io/
-  fontawesome:
-
+  # http://fontawesome.io/
+  fontawesome: //cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.css
+motion: //cdn.bootcss.com/motion.js/0.3.0/motion.js
 
 # Assets
 css: css
@@ -416,3 +425,6 @@ images: images
 
 # Theme version
 version: 5.0.2
+
+
+
