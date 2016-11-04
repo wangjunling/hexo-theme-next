@@ -14,7 +14,7 @@ avatar: /uploads/avatar.png
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://doublekill.me
 root: /
-permalink: :category/:title/
+permalink: :year/:month/:day/:title/
 permalink_defaults: :year/:month/:day/:title/
 baidu_analytics: 6e9fcf44aa0624aeea99661c06d818bb
 jiathis: true
